@@ -45,6 +45,7 @@
 
 - Profile 이 필요한 이유 -> 환경별로 설정해야 하는 property 값들이 다르기 때문에.
 
+  
 - 방법
 1. 환경별 Property 값 설정.
 2. IntelliJ 실행 시 profile 적용 설정
