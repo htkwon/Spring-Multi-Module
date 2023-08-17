@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.14'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'java-library'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '11'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'com.mysql:mysql-connector-j'
+    api 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+//bootJar의 기본값은 true -> ㅇㅇㅇ.jar 생성 -> 이 안에 application을 실행하기위한 의존성과 클래스, 리소스를 포함하고 있음 -> common 모듈은 이에 필요가 없음.
+tasks.bootJar {enabled = false}
+//ㅇㅇㅇ-plain.jar 생성 -> dependency를 갖고 있지 않음. -> 클래스와 리소스만 포함.
+tasks.jar {enabled=true}
+
+// ./gradlew clean :module-api:buildNeeded --stacktrace --info --refresh-dependencies -x test
+
+

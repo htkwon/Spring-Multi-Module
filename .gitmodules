@@ -1,0 +1,6 @@
+[submodule "multimodule/module-api"]
+	path = multimodule/module-api
+	url = https://github.com/htkwon/Spring-Multi-Module.git
+[submodule "Spring-Multi-Module"]
+	path = Spring-Multi-Module
+	url = https://github.com/htkwon/Spring-Multi-Module.git
