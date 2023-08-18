@@ -15,7 +15,13 @@
 
 ## 개념
 
-Multi Module -> N개의 Module이 조립되어 있는 프로젝트 
+
+
+Multi Module 
+
+:N개의 Module이 조립되어 있는 프로젝트 
+
+
 사용 이유 -> 다른 서버를 각각 독립적으로 관리한다면 중복해서 관리해야하므로 risk가 커진다
 
 
@@ -25,6 +31,8 @@ Multi Module -> N개의 Module이 조립되어 있는 프로젝트
 
 1. application 클래스에서 스캔하고하자 하는 모듈과의 경로 일치시키기.
 2. @SpringBootApplication 어노테이션의 scanBasePackages에 빈으로 등록하고 싶은 하위 모듈의 경로 추가. (실무에선 이 방법 사용.)
+
+
 
 
 
@@ -39,15 +47,21 @@ Multi Module -> N개의 Module이 조립되어 있는 프로젝트
 
 
 
+
+
 ### Gradle 또는 Maven 으로 배포 이유 
 
 : 실제 운영서버는 인텔리제이의 도움을 빌릴 수 없고 JAR 파일을 넘겨서 실행.
+
+
 
 
 ### <멀티모듈 프로젝트에서 Gradle 배포시 유의점> 
 
 
 --> application 실행하기위한 의존성, 클래스, 리소스이 필요 없을 시, build.gradle 파일에서 tasks.bootJar false 설정 및 tasks.jar 설정 true (현 프로젝트에선 module-common 모듈 적용.)
+
+
 
 
 
